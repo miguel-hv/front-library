@@ -1,5 +1,5 @@
 import './App.css';
-import { Books } from './components';
+import { BookForm, Books } from './components';
 
 
 function App() {
@@ -7,7 +7,14 @@ function App() {
   return (
     <div className="App">
       RECRUITERS LIBRARY
-      <Books/>
+      <div className='grid grid-cols-2'>
+        <div>
+          <BookForm/>
+        </div>
+        <div>
+          <Books/>
+        </div>
+      </div>
     </div>
   );
 }
