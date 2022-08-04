@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       RECRUITERS LIBRARY
-      <div className='grid grid-cols-2'>
+      <div className="grid-cols-2 grid">
         <div>
           <BookForm/>
         </div>

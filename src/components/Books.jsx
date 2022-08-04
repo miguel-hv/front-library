@@ -1,9 +1,9 @@
-import { useGetBooks } from "../hooks/useBooks";
+import { useBooks } from "../api/useBooks";
 
 
 const Books = () => {
 
-    const { booksList } = useGetBooks();
+    const { booksList } = useBooks();
 
     if (booksList.length) {
         return (

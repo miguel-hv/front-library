@@ -1,29 +1,18 @@
 // Render Prop
 import { useEffect, useState } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { usePostBooks } from '../hooks/useBooks';
+import { BooksService } from '../api/BooksService';
+
 
 const BookForm = () => {
-
-    const testBook = {
-      name : "test name",
-      author: "test author",
-      comment: "test comment",
-      signature: "test signature",
-  }
-
-  const postBook = usePostBooks();
 
   return (
     <div>
       <Formik
         initialValues={{ name: '', author: '', comment: '', signature:''}}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
-          postBook(values);
+          BooksService.postBook(values);
+          setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
@@ -38,9 +27,6 @@ const BookForm = () => {
           </Form>
         )}
       </Formik>
-      {/* <button onClick={()=>{postBook()}}>
-        POST
-      </button> */}
     </div>
   )
 };
