@@ -7,13 +7,9 @@ function App() {
   return (
     <div className="App">
       RECRUITERS LIBRARY
-      <div className="grid-cols-2 grid">
-        <div>
+      <div className="grid-cols-2 grid gap-x-10">
           <BookForm/>
-        </div>
-        <div>
           <Books/>
-        </div>
       </div>
     </div>
   );

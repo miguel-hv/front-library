@@ -7,9 +7,12 @@ const Books = () => {
 
     if (booksList.length) {
         return (
-            booksList.map(e => 
-            <p key={e._id}>{e.author}</p>            
-            )
+            <div>
+               { booksList.map(e => 
+                <p key={e._id}>{e.author}</p>            
+                )
+               }
+            </div>
         );
     } else {
         <p>No hay libros</p>

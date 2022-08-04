@@ -7,7 +7,7 @@ import { BooksService } from '../api/BooksService';
 const BookForm = () => {
 
   return (
-    <div>
+    <>
       <Formik
         initialValues={{ name: '', author: '', comment: '', signature:''}}
         onSubmit={(values, { setSubmitting }) => {
@@ -16,18 +16,26 @@ const BookForm = () => {
         }}
       >
         {({ isSubmitting }) => (
-          <Form>
-            <Field id="name" name="name" placeholder="Título del libro"/>
-            <Field id="author" name="author" placeholder="Escrito por:"/>
-            <Field id="comment" name="comment" placeholder="¿Por qué lo recomendarías?"/>
-            <Field type="signature" name="signature" placeholder="Tu firma"/>
+          <Form className='m-4'>
+            <Field id="name" name="name" placeholder="Título del libro"
+              className="w-full border border-gray-400 rounded py-1 px-2 m-3 shadow-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+            />
+            <Field id="author" name="author" placeholder="Escrito por:"
+              className="w-full border border-gray-400 rounded py-1 px-2 m-3 shadow-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+            />
+            <Field id="comment" name="comment" placeholder="¿Por qué lo recomendarías?"
+              className="w-full border border-gray-400 rounded py-1 px-2 m-3 shadow-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+            />
+            <Field type="signature" name="signature" placeholder="Tu firma"
+              className="w-full border border-gray-400 rounded py-1 px-2 m-3 shadow-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+            />
             <button type="submit" disabled={isSubmitting}>
               Enviar
             </button>
           </Form>
         )}
       </Formik>
-    </div>
+    </>
   )
 };
 
