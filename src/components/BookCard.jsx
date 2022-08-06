@@ -28,7 +28,7 @@ const BookCard = ({ name, author, comment, signature }) => {
     );
 
     return (
-        <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <div className="block mb-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             { Name }            
             { Author }            
             { Comment }            
