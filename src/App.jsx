@@ -1,6 +1,5 @@
 import './App.css';
-import { BookForm, Books } from './components';
-
+import { GallerySection, InfoSection } from './components';
 
 function App() {
 
@@ -8,8 +7,8 @@ function App() {
     <div className="App">
       RECRUITERS LIBRARY
       <div className="grid-cols-2 grid gap-x-10">
-          <BookForm/>
-          <Books/>
+          <InfoSection/> 
+          <GallerySection/>
       </div>
     </div>
   );
