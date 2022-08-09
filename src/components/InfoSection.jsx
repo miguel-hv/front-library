@@ -1,27 +1,22 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from "./About";
 import BookForm from "./BookForm"
 import Contact from './Contact';
 import Tabs from './Tabs';
 
-const FORM = 'form';
-const ABOUT = 'about';
-const CONTACT = 'contact';
-
 const InfoSection = () => {
 
-    const [tab, setTab] = useState(FORM);
+    const [tab, setTab] = useState('form');
     let TabContent;
 
     switch (tab) {
-        case FORM:
+        case 'form':
             TabContent = <BookForm/>;
             break;
-        case ABOUT:
+        case 'about':
             TabContent = <About/>;
             break;
-        case CONTACT:
+        case 'contact':
             TabContent = <Contact/>;
             break;            
 
@@ -32,14 +27,13 @@ const InfoSection = () => {
 
     const onChangeTab = (selectedTab) => {
         setTab(selectedTab);
-        console.log("pestaña elegida");
-        console.log(selectedTab);
     } 
+    console.log(tab);
 
     return (
-        <div className="p-4 bg-green-600 m-8 max-h-screen overflow-y-scroll flex flex-col justify-center">
+        <div className="p-4 bg-green-600 m-8 max-h-screen overflow-y-scroll flex flex-col justify-center relative">
             
-                    <Tabs onChangeTab={onChangeTab}/>
+                    <Tabs onChangeTab={onChangeTab} tab={tab}/>
                     { TabContent }
                     
         </div>
