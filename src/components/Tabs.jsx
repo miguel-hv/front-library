@@ -25,10 +25,16 @@ const Tabs = ({ onChangeTab, tab }) => {
     // display: inline-block;
     // border-bottom: 2px solid #333;
     return (
-        <div className="flex justify-evenly w-full absolute top-0">
-            <button onClick={activateScreen} id="form" className={[formTabBgStyles, tabStyles].join(' ')}> Publicar </button>
-            <button onClick={activateScreen} id="about" className={[aboutTabBgStyles, tabStyles].join(' ')}> Acerca de </button> 
-            <button onClick={activateScreen} id="contact" className={[contactTabBgStyles, tabStyles].join(' ')}> Contacto </button>
+        <div className="flex -ml-4 w-full absolute top-0 border-b border-gray-600">
+            <button onClick={activateScreen} id="form" className={[formTabBgStyles, tabStyles].join(' ')}>
+                 Publicar 
+            </button>
+            <button onClick={activateScreen} id="about" className={[aboutTabBgStyles, tabStyles].join(' ')}> 
+                Sobre este proyecto
+            </button> 
+            <button onClick={activateScreen} id="contact" className={[contactTabBgStyles, tabStyles].join(' ')}>
+                Sobre mí
+            </button>
         </div>
     );
 }    
