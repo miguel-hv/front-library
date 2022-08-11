@@ -25,7 +25,7 @@ const Tabs = ({ onChangeTab, tab }) => {
     // display: inline-block;
     // border-bottom: 2px solid #333;
     return (
-        <div className="flex -ml-4 w-full absolute top-0 border-b border-gray-600">
+        <div className="flex flex-col sm:flex-row w-full border-b border-gray-600">
             <button onClick={activateScreen} id="form" className={[formTabBgStyles, tabStyles].join(' ')}>
                  Publicar 
             </button>

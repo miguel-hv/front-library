@@ -31,10 +31,12 @@ const InfoSection = () => {
     console.log(tab);
 
     return (
-        <div className="p-4 bg-green-600 m-8 max-h-screen overflow-y-scroll flex flex-col justify-center relative">
+        <div className="bg-green-600 m-8 overflow-y-scroll flex flex-col">
             
                     <Tabs onChangeTab={onChangeTab} tab={tab}/>
-                    { TabContent }
+                    <div className='flex-1 mx-4 my-8 flex flex-col justify-center'>
+                        { TabContent }
+                    </div>
                     
         </div>
     );
