@@ -12,7 +12,7 @@ export const useBooks = () => {
             setBooksList(res.data)
         })
         .catch( err => {
-            console.log(err);
+            // console.log(err);
             setError(err);
         });
     }, []);

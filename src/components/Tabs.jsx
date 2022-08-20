@@ -3,29 +3,16 @@
 const Tabs = ({ onChangeTab, tab }) => {
 
     const activateScreen = (e) => {
-        console.log(`pantalla ${e.currentTarget.id} activada`);
-        console.log(e);
         onChangeTab(e.currentTarget.id);
     }
 
-    const formTabBgStyles = tab === 'form' ? 'bg-pink-600 ': 'bg-none';
-    const aboutTabBgStyles = tab === 'about' ? 'bg-pink-600 ': 'bg-none';
-    const contactTabBgStyles = tab === 'contact' ? 'bg-pink-600 ': 'bg-none';    
-    const tabStyles = "m-0 px-3 border border-gray-600 rounded-t";
+    const formTabBgStyles = tab === 'form' ? 'bg-none text-blue-700': 'bg-blue-700';
+    const aboutTabBgStyles = tab === 'about' ? 'bg-none text-blue-700': 'bg-blue-700';
+    const contactTabBgStyles = tab === 'contact' ? 'bg-none text-blue-700': 'bg-blue-700';    
+    const tabStyles = "m-0 px-3 border border-gray-600 rounded-t py-6 font-medium text-white hover:bg-blue-800";
 
-    // margin: 0;
-    // padding: 0 15px;
-    // border: 1px solid #272311;
-    // border-bottom: 1px solid #868686;
-    // border-top-left-radius: 5px;
-    // border-top-right-radius: 5px;
-    // height: 35px;
-    // position: relative;
-    // top: 5px;
-    // display: inline-block;
-    // border-bottom: 2px solid #333;
     return (
-        <div className="flex flex-col sm:flex-row w-full border-b border-gray-600">
+        <div className="flex flex-col sm:flex-row w-full border-b border-gray-600 bg-blue-200">
             <button onClick={activateScreen} id="form" className={[formTabBgStyles, tabStyles].join(' ')}>
                  Publicar 
             </button>

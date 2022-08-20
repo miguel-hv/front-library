@@ -1,11 +1,11 @@
 import Books from "./Books";
 
 
-const GallerySection = () => {
+const GallerySection = (props) => {
 
     return (
-        <div className="p-4 bg-red-600 m-8 overflow-y-scroll">
-            <Books/>
+        <div className="bg-gray-100 rounded-lg p-4 m-8 overflow-y-scroll">
+            {props.children}
         </div>
     );
 }    

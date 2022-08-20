@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import About from "./About";
-import BookForm from "./BookForm"
 import Contact from './Contact';
 import Tabs from './Tabs';
 
-const InfoSection = () => {
+const InfoSection = (props) => {
 
     const [tab, setTab] = useState('form');
     let TabContent;
 
     switch (tab) {
         case 'form':
-            TabContent = <BookForm/>;
+            TabContent = props.children;
             break;
         case 'about':
             TabContent = <About/>;
@@ -21,20 +20,19 @@ const InfoSection = () => {
             break;            
 
         default: 
-            TabContent = <BookForm/>;
+            TabContent = props.children;
             break;
     }
 
     const onChangeTab = (selectedTab) => {
         setTab(selectedTab);
     } 
-    console.log(tab);
 
     return (
-        <div className="bg-green-600 m-8 overflow-y-scroll flex flex-col">
+        <div className="bg-gray-100 rounded-lg m-8 overflow-y-scroll flex flex-col">
             
                     <Tabs onChangeTab={onChangeTab} tab={tab}/>
-                    <div className='flex-1 mx-4 my-8 flex flex-col justify-center'>
+                    <div className='flex-1 mx-4 my-6 flex flex-col justify-center'>
                         { TabContent }
                     </div>
                     

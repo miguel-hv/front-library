@@ -14,7 +14,7 @@ export const BooksService = {
         try {
             return await axios.post(BASE_URL+'/book', book);
         } catch (error) {
-            return error;
+            throw error;
         };
     }
         

@@ -1,12 +1,9 @@
-import { useBooks } from "../api/useBooks";
 import BookCard from "./BookCard";
 
 
-const Books = () => {
+const Books = ({booksList}) => {
 
-    const { booksList } = useBooks();
-
-    if (booksList.length) {
+    if (booksList && booksList.length > 0) {
         //TODO: BookCard en el div dentro del map
         return (
             <div> 
@@ -23,7 +20,9 @@ const Books = () => {
             </div>
         );
     } else {
-        <p>No hay libros</p>
+        return (
+            <p>No hemos encontrado ningún libro</p>
+        );
     }
 }
 

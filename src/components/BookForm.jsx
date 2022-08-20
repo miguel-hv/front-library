@@ -1,28 +1,49 @@
 // Render Prop
 import { Formik, Form, Field } from 'formik';
-import { BooksService } from '../api/BooksService';
 
 
-const BookForm = () => {
+const validate = values => {
+
+  const errors = {};
+
+  if (!values.name) {
+    errors.name = 'Required';
+  }
+  if (!values.author) {
+    errors.author = 'Required';
+  }
+
+  return errors;
+};
+
+const BookForm = ({  returnPromesa }) => {
+
 
   return (
     <>
       <Formik
         initialValues={{ name: '', author: '', comment: '', signature:''}}
-        onSubmit={(values, { setSubmitting }) => {
-          BooksService.postBook(values);
-          console.log(BooksService.postBook(values));
+        validate={validate}
+        onSubmit={(values, { resetForm, setSubmitting }) => {
+          returnPromesa(values);
           setSubmitting(false);
+          resetForm({values: ''});
         }}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, errors, touched }) => (
           <Form>
             <Field id="name" name="name" placeholder="Título del libro"
               className="w-full border border-gray-400 rounded py-1 px-2 mb-3 shadow-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
             />
+            {errors.name && touched.name ? (
+              <div className='w-full text-red-700 font-light text-sm -mt-3'>{errors.name}</div>
+            ) : null}
             <Field id="author" name="author" placeholder="Escrito por:"
               className="w-full border border-gray-400 rounded py-1 px-2 my-3 shadow-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
             />
+            {errors.author && touched.author ? (
+              <div className='w-full text-red-700 font-light text-sm -mt-3'>{errors.author}</div>
+            ) : null}
             <Field id="comment" name="comment" placeholder="¿Por qué lo recomendarías?"
               className="w-full border border-gray-400 rounded py-1 px-2 my-3 shadow-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
             />
