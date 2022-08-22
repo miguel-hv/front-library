@@ -9,7 +9,7 @@ const Tabs = ({ onChangeTab, tab }) => {
     const formTabBgStyles = tab === 'form' ? 'bg-none text-blue-700': 'bg-blue-700';
     const aboutTabBgStyles = tab === 'about' ? 'bg-none text-blue-700': 'bg-blue-700';
     const contactTabBgStyles = tab === 'contact' ? 'bg-none text-blue-700': 'bg-blue-700';    
-    const tabStyles = "m-0 px-3 border border-gray-600 rounded-t py-6 font-medium text-white hover:bg-blue-800";
+    const tabStyles = "m-0 px-3 border border-gray-600 rounded-t py-6 font-medium text-white hover:bg-blue-800-lg";
 
     return (
         <div className="flex flex-col sm:flex-row w-full border-b border-gray-600 bg-blue-200">

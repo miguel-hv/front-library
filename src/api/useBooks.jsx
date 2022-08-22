@@ -9,7 +9,7 @@ export const useBooks = () => {
     useEffect(() => {
         BooksService.getBooks()
         .then( res => {
-            setBooksList(res.data)
+            setBooksList(res.data);
         })
         .catch( err => {
             // console.log(err);

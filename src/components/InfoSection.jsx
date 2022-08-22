@@ -1,12 +1,5 @@
-import { useState } from 'react';
-import About from "./About";
-import Contact from './Contact';
-import Tabs from './Tabs';
 
 const InfoSection = ({children}) => {
-
-    console.log(children)
-
 
     return (
         <div className="bg-gray-100 rounded-lg m-8 overflow-y-scroll flex flex-col">   

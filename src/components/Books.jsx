@@ -3,8 +3,6 @@ import BookCard from "./BookCard";
 
 const Books = ({booksList}) => {
 
-    if (booksList && booksList.length > 0) {
-        //TODO: BookCard en el div dentro del map
         return (
             <div> 
                { booksList.map(e => (
@@ -19,11 +17,6 @@ const Books = ({booksList}) => {
                }
             </div>
         );
-    } else {
-        return (
-            <p>No hemos encontrado ningún libro</p>
-        );
-    }
 }
 
 export default Books;

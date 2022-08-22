@@ -13,7 +13,11 @@ function App() {
     let lastBook = booksList.at(-1);
     values._id = lastBook._id+1;
     setBooksList([values, ...booksList]);
-    setTab('about');
+    if (window.innerWidth < 640){
+      setTab('none');
+    } else {
+      setTab('about');
+    }
   }
 
   let TabContent;
@@ -26,7 +30,10 @@ function App() {
         break;
     case 'contact':
         TabContent = <Contact/>;
-        break;            
+        break;  
+    case 'none':
+      TabContent = null;
+      break;          
 
     default: 
         TabContent = <BookForm returnPromesa={promesaPost}/>;
@@ -44,21 +51,26 @@ function App() {
     })
     .catch( err => {
         console.log(err);
-        setBooksList([]);
+        setBooksList();
     });
   }, []);
+
+  const scrollTo = (ref) => {
+    if (ref) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
   
   return (
-    <div className="bg-gray-400 flex sm:max-h-screen">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-1">
+    <div className="bg-gray-400 flex sm:max-h-screen justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-1 lg:max-w-screen-lg">
           <InfoSection>
             <Tabs onChangeTab={onChangeTab} tab={tab}/>
             {TabContent}
           </InfoSection> 
 
-          <GallerySection >
-            { booksList.length > 0 ? <Books booksList={booksList}/> : <div>Nada</div>}
-           
+          <GallerySection refProp={scrollTo}>
+            { booksList ? <Books booksList={booksList}/> : <p id='box'>No hemos encontrado ningún libro</p>}           
           </GallerySection> 
       </div>
     </div>
