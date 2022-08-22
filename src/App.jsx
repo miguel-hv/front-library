@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { BooksService } from './api/BooksService';
 import './App.css';
 import { BookForm, GallerySection, Books, InfoSection, Tabs, About, Contact } from './components';
+import bgImage from "./assets/patronmndl.png";
+
 
 function App() {
 
@@ -62,7 +64,7 @@ function App() {
   }
   
   return (
-    <div className="bg-gray-400 flex sm:max-h-screen justify-center">
+    <div className="flex sm:max-h-screen sm:min-h-screen justify-center" style={{backgroundImage: `url(${bgImage})`}}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-1 lg:max-w-screen-lg">
           <InfoSection>
             <Tabs onChangeTab={onChangeTab} tab={tab}/>
@@ -70,7 +72,8 @@ function App() {
           </InfoSection> 
 
           <GallerySection refProp={scrollTo}>
-            { booksList ? <Books booksList={booksList}/> : <p id='box'>No hemos encontrado ningún libro</p>}           
+            { booksList ? <Books booksList={booksList}/> : 
+            <p>Lo sentimos, no hemos encontrado ningún libro</p>}           
           </GallerySection> 
       </div>
     </div>
