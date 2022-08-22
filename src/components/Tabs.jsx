@@ -2,7 +2,7 @@
 
 const Tabs = ({ onChangeTab, tab }) => {
 
-    const activateScreen = (e) => {
+    const changeTab = (e) => {
         onChangeTab(e.currentTarget.id);
     }
 
@@ -13,13 +13,13 @@ const Tabs = ({ onChangeTab, tab }) => {
 
     return (
         <div className="flex flex-col sm:flex-row w-full border-b border-gray-600 bg-blue-200">
-            <button onClick={activateScreen} id="form" className={[formTabBgStyles, tabStyles].join(' ')}>
+            <button onClick={changeTab} id="form" className={[formTabBgStyles, tabStyles].join(' ')}>
                  Publicar 
             </button>
-            <button onClick={activateScreen} id="about" className={[aboutTabBgStyles, tabStyles].join(' ')}> 
+            <button onClick={changeTab} id="about" className={[aboutTabBgStyles, tabStyles].join(' ')}> 
                 Sobre este proyecto
             </button> 
-            <button onClick={activateScreen} id="contact" className={[contactTabBgStyles, tabStyles].join(' ')}>
+            <button onClick={changeTab} id="contact" className={[contactTabBgStyles, tabStyles].join(' ')}>
                 Sobre mí
             </button>
         </div>
