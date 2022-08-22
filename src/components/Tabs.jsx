@@ -12,7 +12,7 @@ const Tabs = ({ onChangeTab, tab }) => {
     const tabStyles = "m-0 px-3 border border-gray-600 rounded-t py-6 font-medium text-white hover:bg-blue-800-lg";
 
     return (
-        <div className="flex flex-col sm:flex-row w-full border-b border-gray-600 bg-blue-200">
+        <div className="flex flex-col sm:flex-row w-full border-b border-gray-600 bg-pink-200">
             <button onClick={changeTab} id="form" className={[formTabBgStyles, tabStyles].join(' ')}>
                  Publicar 
             </button>
