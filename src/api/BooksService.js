@@ -1,5 +1,6 @@
 const axios = require('axios').default;
-const BASE_URL = "http://localhost:3001";
+// const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://recruiting-books-api.herokuapp.com";
 
 export const BooksService = {
 
