@@ -6,10 +6,10 @@ const Tabs = ({ onChangeTab, tab }) => {
         onChangeTab(e.currentTarget.id);
     }
 
-    const formTabBgStyles = tab === 'form' ? 'bg-none text-blue-500': 'bg-blue-400';
-    const aboutTabBgStyles = tab === 'about' ? 'bg-none text-blue-500': 'bg-blue-400';
-    const contactTabBgStyles = tab === 'contact' ? 'bg-none text-blue-500': 'bg-blue-400';    
-    const tabStyles = "m-0 px-3 border border-gray-600 rounded-t py-6 font-medium text-white hover:bg-blue-800-lg";
+    const formTabBgStyles = tab === 'form' ? 'bg-none text-blue-500': 'bg-blue-500 lg:hover:bg-blue-800';
+    const aboutTabBgStyles = tab === 'about' ? 'bg-none text-blue-500': 'bg-blue-500 lg:hover:bg-blue-800';
+    const contactTabBgStyles = tab === 'contact' ? 'bg-none text-blue-500': 'bg-blue-500 lg:hover:bg-blue-800';    
+    const tabStyles = "m-0 px-3 border border-gray-600 rounded-t py-6 font-medium text-white";
 
     return (
         <div className="flex flex-col sm:flex-row w-full border-b border-gray-600 bg-pink-200">
