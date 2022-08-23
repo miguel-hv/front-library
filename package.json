@@ -1,9 +1,6 @@
 {
   "name": "recruiters-library",
   "version": "0.1.0",
-  "engines": {
-    "node": "16.13.1"
-  },
   "private": true,
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
@@ -24,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts --max_old_space_size=256 build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
