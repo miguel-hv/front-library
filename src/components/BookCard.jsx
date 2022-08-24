@@ -11,7 +11,7 @@ const BookCard = ({ name, author, comment, signature }) => {
     }
     if(signature && signature.length){
         Signature = (            
-            <p className="font-normal text-gray-700 text-right pt-1">
+            <p className="font-normal text-gray-700 text-right">
                 {signature}
             </p>       
         );
