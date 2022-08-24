@@ -67,13 +67,13 @@ function App() {
     <div className="flex sm:max-h-screen sm:min-h-screen justify-center" style={{backgroundImage: `url(${bgImage})`}}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-1 lg:max-w-screen-lg">
           <InfoSection>
-            <Tabs onChangeTab={onChangeTab} tab={tab}/>
-            {TabContent}
+            {/* <Tabs onChangeTab={onChangeTab} tab={tab}/>
+            {TabContent} */}
           </InfoSection> 
 
           <GallerySection refProp={scrollTo}>
-            { booksList ? <Books booksList={booksList}/> : 
-            <p>Lo sentimos, no hemos encontrado ningún libro</p>}           
+            {/* { booksList ? <Books booksList={booksList}/> : 
+            <p>Lo sentimos, no hemos encontrado ningún libro</p>}            */}
           </GallerySection> 
       </div>
     </div>
