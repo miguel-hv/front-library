@@ -43,19 +43,19 @@ function App() {
   }
 
   const onChangeTab = (selectedTab) => {
-    setTab(selectedTab);
+    // setTab(selectedTab);
   } 
 
-  useEffect(() => {
-    BooksService.getBooks()
-    .then( res => {
-      setBooksList(res.data);
-    })
-    .catch( err => {
-        console.log(err);
-        setBooksList();
-    });
-  }, []);
+  // useEffect(() => {
+  //   BooksService.getBooks()
+  //   .then( res => {
+  //     setBooksList(res.data);
+  //   })
+  //   .catch( err => {
+  //       console.log(err);
+  //       setBooksList();
+  //   });
+  // }, []);
 
   const scrollTo = (ref) => {
     // if (ref) {
