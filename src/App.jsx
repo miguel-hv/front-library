@@ -11,15 +11,15 @@ function App() {
   const [tab, setTab] = useState('form');
 
   const promesaPost = (values)=> {
-    BooksService.postBook(values);
-    let lastBook = booksList.at(-1);
-    values._id = lastBook._id+1;
-    setBooksList([values, ...booksList]);
-    if (window.innerWidth < 640){
-      setTab('none');
-    } else {
-      setTab('about');
-    }
+    // BooksService.postBook(values);
+    // let lastBook = booksList.at(-1);
+    // values._id = lastBook._id+1;
+    // setBooksList([values, ...booksList]);
+    // if (window.innerWidth < 640){
+    //   setTab('none');
+    // } else {
+    //   setTab('about');
+    // }
   }
 
   let TabContent;
@@ -58,9 +58,9 @@ function App() {
   }, []);
 
   const scrollTo = (ref) => {
-    if (ref) {
-      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+    // if (ref) {
+    //   ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // }
   }
   
   return (

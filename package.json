@@ -1,9 +1,6 @@
 {
   "name": "recruiters-library",
   "version": "0.1.0",
-  "engines": {
-    "node": "16.13.1"
-  },
   "private": true,
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
