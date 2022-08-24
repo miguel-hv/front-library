@@ -69,6 +69,7 @@ function App() {
           <InfoSection>
             {/* <Tabs onChangeTab={onChangeTab} tab={tab}/>
             {TabContent} */}
+            <div>test</div>
           </InfoSection> 
 
           <GallerySection refProp={scrollTo}>
