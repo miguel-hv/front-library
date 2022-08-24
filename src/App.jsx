@@ -11,15 +11,15 @@ function App() {
   const [tab, setTab] = useState('form');
 
   const promesaPost = (values)=> {
-    // BooksService.postBook(values);
-    // let lastBook = booksList.at(-1);
-    // values._id = lastBook._id+1;
-    // setBooksList([values, ...booksList]);
-    // if (window.innerWidth < 640){
-    //   setTab('none');
-    // } else {
-    //   setTab('about');
-    // }
+    BooksService.postBook(values);
+    let lastBook = booksList.at(-1);
+    values._id = lastBook._id+1;
+    setBooksList([values, ...booksList]);
+    if (window.innerWidth < 640){
+      setTab('none');
+    } else {
+      setTab('about');
+    }
   }
 
   let TabContent;
@@ -43,38 +43,38 @@ function App() {
   }
 
   const onChangeTab = (selectedTab) => {
-    // setTab(selectedTab);
+    setTab(selectedTab);
   } 
 
-  // useEffect(() => {
-  //   BooksService.getBooks()
-  //   .then( res => {
-  //     setBooksList(res.data);
-  //   })
-  //   .catch( err => {
-  //       console.log(err);
-  //       setBooksList();
-  //   });
-  // }, []);
+  useEffect(() => {
+    BooksService.getBooks()
+    .then( res => {
+      setBooksList(res.data);
+    })
+    .catch( err => {
+        console.log(err);
+        setBooksList();
+    });
+  }, []);
 
   const scrollTo = (ref) => {
-    // if (ref) {
-    //   ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    // }
+    if (ref) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
   
   return (
     <div className="flex sm:max-h-screen sm:min-h-screen justify-center" style={{backgroundImage: `url(${bgImage})`}}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-1 lg:max-w-screen-lg">
           <InfoSection>
-            {/* <Tabs onChangeTab={onChangeTab} tab={tab}/>
-            {TabContent} */}
+            <Tabs onChangeTab={onChangeTab} tab={tab}/>
+            {TabContent}
             <div>test</div>
           </InfoSection> 
 
           <GallerySection refProp={scrollTo}>
-            {/* { booksList ? <Books booksList={booksList}/> : 
-            <p>Lo sentimos, no hemos encontrado ningún libro</p>}            */}
+            { booksList ? <Books booksList={booksList}/> : 
+            <p>Lo sentimos, no hemos encontrado ningún libro</p>}           
           </GallerySection> 
       </div>
     </div>
